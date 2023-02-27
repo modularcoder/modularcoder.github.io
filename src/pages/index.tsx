@@ -21,7 +21,7 @@ export default function Home() {
       <main className={styles.main}>
           Hello world
 
-          <Link href="/posts/first-post">
+          <Link href="/blog/first-post">
             <Image
               className={styles.logo}
               src="/next.svg"
