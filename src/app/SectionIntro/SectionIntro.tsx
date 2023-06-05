@@ -21,7 +21,7 @@ const SectionHeader = () => {
               Gevorg Harutyunyan
             </h1>
             <h2 className="text-2xl text-zinc-500 font-bold tracking-tight ">
-              Front End Engineer, Full-Stack Developer
+              Front End Engineer, Full Stack Developer
             </h2>
           </div>
         </div>

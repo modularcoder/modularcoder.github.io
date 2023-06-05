@@ -29,5 +29,5 @@ body {
 */
 
 a {
-  @apply text-pink-500;
+  @apply text-primary;
 }
