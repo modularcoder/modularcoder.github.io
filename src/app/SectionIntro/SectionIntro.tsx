@@ -26,9 +26,17 @@ const SectionHeader = () => {
           </div>
         </div>
         <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-          Hi, I’m Gevorg, a software engineer based in Armenia. I write about
-          scalable and modular front-end, tech tooling, startups and system
-          design.
+          Hi, I’m Gevorg, a software engineer based in Armenia. Worked with
+          companies from Canada, Finland, Australia, US, Czech Republic. I write
+          about scalable and modular front-end, tech tooling, startups and
+          system design. I’m also co-organizing regional JavaScript conferences{' '}
+          <a className="font-medium" href="https://jsconf.am">
+            jsconf.am
+          </a>
+          ,{' '}
+          <a className="font-medium" href="https://reactconf.am">
+            reactconf.am
+          </a>
         </p>
         <div className="mt-6 flex gap-6">
           <BaseSocialLink
