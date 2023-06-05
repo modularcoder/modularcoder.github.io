@@ -8,7 +8,7 @@ import BaseSocialLink from '../_components/BaseSocialLink/BaseSocialLink'
 
 const SectionHeader = () => {
   return (
-    <section className="py-40 px-20">
+    <section className="py-16 px-8 sm:py-40 sm:px-20">
       <div className="max-w-xl ">
         <div className="flex flex-row gap-6 items-center">
           <img
