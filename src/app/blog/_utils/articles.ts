@@ -7,6 +7,7 @@ async function importArticle(articleFilename: string) {
   )
 
   console.log('meta', meta)
+  console.log('component', component)
 
   return {
     slug: articleFilename.replace(/(\/index)?\.mdx$/, ''),
@@ -26,9 +27,9 @@ export async function getAllArticles() {
 
   console.log('articleFilenames', articleFilenames)
 
-  return await Promise.all(articleFilenames.map(importArticle))
+  let articles = await Promise.all(articleFilenames.map(importArticle))
   // let articles: any = []
   // let articles = await Promise.all(articleFilenames.map(importArticle))
   // return articles
-  // return articles.sort((a, z) => new Date(z.date) - new Date(a.date))
+  return articles.sort((a, z) => new Date(z.date) - new Date(a.date))
 }
