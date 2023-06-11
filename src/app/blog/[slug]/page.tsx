@@ -13,11 +13,11 @@ const BlogPost: NextPage<Props> = async ({ params }) => {
 
   return (
     <main className="min-h-screen p-24">
-      Blog Post {params.slug}
-      <article
-        className="prose prose-zinc md:prose-lg lg:prose-xl"
-        dangerouslySetInnerHTML={{ __html: data.html }}
-      ></article>
+      <pre>{data.id}</pre>
+      <article className="prose prose-zinc md:prose-lg lg:prose-xl">
+        <h1>{data.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: data.html }}></div>
+      </article>
     </main>
   )
 }

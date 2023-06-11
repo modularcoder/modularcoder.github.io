@@ -1,6 +1,6 @@
-import { remark } from 'remark'
-import html from 'remark-html'
-import { query } from '@/app/_services/notionService'
+// import { remark } from 'remark'
+// import html from 'remark-html'
+// import { queryPosts } from '@/app/_services/notionService'
 
 // const useData = async () => {
 //   const result = await query({
@@ -16,6 +16,9 @@ import { query } from '@/app/_services/notionService'
 // }
 
 export async function usePostContent(slug: string) {
+  const slugParts = slug.split('-')
+  const postId = slugParts[slugParts.length - 1] as string
+
   // const fullPath = path.join(postsDirectory, `${id}.md`);
   // const fileContents = fs.readFileSync(fullPath, 'utf8');
 
@@ -36,6 +39,8 @@ export async function usePostContent(slug: string) {
   // }
 
   return {
-    html: `<h1>Hello</h1>`,
+    id: postId,
+    title: 'The post title',
+    html: `<h2>Hello I need to be fetched from notion</h2>`,
   }
 }

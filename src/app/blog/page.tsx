@@ -79,13 +79,17 @@ export default async function Blog() {
 
   return (
     <main className="min-h-screen p-24">
-      <div className="flex flex-col gap-16 max-w-xl ">
+      <div className="flex flex-col gap-4 max-w-xl ">
         {posts.map((post) => (
-          <Link key={post.id} href={`/blog/${post.slug}`}>
+          <Link
+            key={post.id}
+            href={`/blog/${post.slug}`}
+            className="rounded-xl hover:bg-primary-50 bg-opacity-30 p-5 transition-colors"
+          >
             <div>
               {/* <pre>{JSON.stringify(posts, null, 2)}</pre> */}
               <h2 className="text-2xl">{post.title}</h2>
-              <div className="w-40 aspect-video overflow-hidden shadow-sm rounded-lg">
+              <div className="w-40 aspect-video overflow-hidden shadow-sm rounded ">
                 {post.cover && (
                   <img
                     alt="Cover image "
