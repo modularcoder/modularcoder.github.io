@@ -1,21 +1,34 @@
-// import Image from 'next/image'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const TheHeader: React.FC = () => {
   return (
-    <header className="p-2 px-4 bg-white shadow fixed top-0 left-0 right-0">
-      <div className="flex flex-row gap-2 align-middle">
-        <img
-          src="profilePic.png"
-          className="w-10 aspect-auto rounded-full shadow-sm"
-          alt="Gevorg Harutyunyan profile picture"
-        />
-        <div>
-          <h2 className="text-lg">Gevorg Harutyunyan</h2>
-          <h3 className="text-xs text-slate-400">
-            Front End Engineer, Full-Stack Developer
-          </h3>
+    <header
+      className="
+        p-2 px-4
+        fixed top-0 left-0 right-0
+        bg-white bg-opacity-80
+        backdrop-blur-lg backdrop-opacity-40
+        shadow-sm
+      "
+    >
+      <Link href={'/'}>
+        <div className="flex flex-row gap-2 align-middle">
+          <Image
+            src="profilePic.png"
+            width={40}
+            height={40}
+            className="w-10 h-10 aspect-auto rounded-full shadow-sm"
+            alt="Gevorg Harutyunyan profile picture"
+          />
+          <div>
+            <h2 className="text-lg leading-5">Gevorg Harutyunyan</h2>
+            <h3 className="text-xs text-slate-400">
+              Front End Engineer, Full-Stack Developer
+            </h3>
+          </div>
         </div>
-      </div>
+      </Link>
     </header>
   )
 }

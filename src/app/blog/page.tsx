@@ -3,7 +3,6 @@ import Link from 'next/link'
 // import { getAllArticles } from './_utils/articles'
 // import BagratJan from './_articles/2023-06-06-bagratjan.mdx'
 // const articles = await getAllArticles()
-import SectionIntro from '../SectionIntro/SectionIntro'
 import {
   queryPosts,
   type PageObjectResponse,
@@ -78,34 +77,30 @@ export default async function Blog() {
   const { posts } = await usePosts()
 
   return (
-    <main className="min-h-screen p-24">
-      <div className="flex flex-col gap-4 max-w-xl ">
-        {posts.map((post) => (
-          <Link
-            key={post.id}
-            href={`/blog/${post.slug}`}
-            className="rounded-xl hover:bg-primary-50 bg-opacity-30 p-5 transition-colors"
-          >
-            <div>
-              {/* <pre>{JSON.stringify(posts, null, 2)}</pre> */}
-              <h2 className="text-2xl">{post.title}</h2>
-              <div className="w-40 aspect-video overflow-hidden shadow-sm rounded ">
-                {post.cover && (
-                  <img
-                    alt="Cover image "
-                    src={post.cover}
-                    className=" object-cover "
-                  />
-                )}
-              </div>
-              <p>{post.summary}</p>
-              <strong className="font-medium text-primary ">
-                Read the post
-              </strong>
+    <div className="flex flex-col gap-4 max-w-xl ">
+      {posts.map((post) => (
+        <Link
+          key={post.id}
+          href={`/blog/${post.slug}`}
+          className="rounded-xl hover:bg-primary-50 bg-opacity-30 p-5 transition-colors"
+        >
+          <div>
+            {/* <pre>{JSON.stringify(posts, null, 2)}</pre> */}
+            <h2 className="text-2xl">{post.title}</h2>
+            <div className="w-40 aspect-video overflow-hidden shadow-sm rounded ">
+              {post.cover && (
+                <img
+                  alt="Cover image "
+                  src={post.cover}
+                  className=" object-cover "
+                />
+              )}
             </div>
-          </Link>
-        ))}
-      </div>
-    </main>
+            <p>{post.summary}</p>
+            <strong className="font-medium text-primary ">Read the post</strong>
+          </div>
+        </Link>
+      ))}
+    </div>
   )
 }
