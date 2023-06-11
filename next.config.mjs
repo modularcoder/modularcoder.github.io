@@ -6,6 +6,7 @@ import rehypePrism from '@mapbox/rehype-prism'
 const nextConfig = {
   output: 'export',
   mdxRs: true,
+  images: { unoptimized: true },
 }
 
 const withMDX = nextMDX({

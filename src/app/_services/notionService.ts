@@ -1,4 +1,5 @@
 import { Client } from '@notionhq/client'
+export { type PageObjectResponse } from '@notionhq/client/build/src/api-endpoints'
 
 if (!process.env.NOTION_TOKEN) {
   throw new Error('NOTION_TOKEN env variable is not set')

@@ -26,7 +26,7 @@ const SectionHeader = () => {
           </div>
         </div>
         <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-          Hi, I’m Gevorg, a software engineer based in Armenia. Worked with
+          Hi, I’m Gevorg, a software engineer based in Armenia. Working with
           companies from Canada, Finland, Australia, US, Czech Republic. I write
           about scalable and modular front-end, tech tooling, startups and
           system design. I’m also co-organizing regional JavaScript conferences{' '}
