@@ -1,9 +1,13 @@
-// import Image from 'next/image'
+import Image from 'next/image'
+import Link from 'next/link'
 // import { getAllArticles } from './_utils/articles'
 // import BagratJan from './_articles/2023-06-06-bagratjan.mdx'
 // const articles = await getAllArticles()
 import SectionIntro from '../SectionIntro/SectionIntro'
-import { query, type PageObjectResponse } from '@/app/_services/notionService'
+import {
+  queryPosts,
+  type PageObjectResponse,
+} from '@/app/_services/notionService'
 // import { PageObjectResponse } from '@notionhq/client'
 
 // type PostsQueryResultItem = {
@@ -28,10 +32,12 @@ type Post = {
   id: string
   cover?: string
   title: string
+  slug: string
+  summary?: string
 }
 
 const usePosts = async () => {
-  const result = await query({
+  const result = await queryPosts({
     filter: {
       property: 'Is published',
       checkbox: {
@@ -47,10 +53,18 @@ const usePosts = async () => {
     // @ts-ignore
     const cover = item.cover.external.url as string
 
+    // @ts-ignore
+    const summary = item.properties.Summary.rich_text[0].plain_text as string
+
+    const slugParts: string[] = item.url.split('/')
+    const slug = slugParts[slugParts.length - 1].toLocaleLowerCase()
+
     return {
       id: item.id,
       title,
       cover,
+      slug,
+      summary,
     }
   }) as Post[]
 
@@ -65,20 +79,27 @@ export default async function Blog() {
 
   return (
     <main className="min-h-screen p-24">
-      <SectionIntro />
-      <div className="flex flex-col gap-16">
+      <div className="flex flex-col gap-16 max-w-xl ">
         {posts.map((post) => (
-          <div key={post.id}>
-            {/* <pre>{JSON.stringify(posts, null, 2)}</pre> */}
-            <h2 className="text-2xl">{post.title}</h2>
-            <div className="w-40 aspect-video overflow-hidden shadow-sm rounded-lg">
-              <img
-                alt="Cover image "
-                src={post.cover}
-                className=" object-cover "
-              />
+          <Link key={post.id} href={`/blog/${post.slug}`}>
+            <div>
+              {/* <pre>{JSON.stringify(posts, null, 2)}</pre> */}
+              <h2 className="text-2xl">{post.title}</h2>
+              <div className="w-40 aspect-video overflow-hidden shadow-sm rounded-lg">
+                {post.cover && (
+                  <img
+                    alt="Cover image "
+                    src={post.cover}
+                    className=" object-cover "
+                  />
+                )}
+              </div>
+              <p>{post.summary}</p>
+              <strong className="font-medium text-primary ">
+                Read the post
+              </strong>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </main>

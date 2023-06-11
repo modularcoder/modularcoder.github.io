@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-a {
-  @apply text-primary;
+.BaseTextLink {
+  @apply font-medium text-primary;
 }
 
 pre[class*='language-'] {

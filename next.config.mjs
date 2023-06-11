@@ -4,7 +4,7 @@ import rehypePrism from '@mapbox/rehype-prism'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // output: 'export',
   mdxRs: true,
   images: { unoptimized: true },
 }

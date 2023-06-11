@@ -5,18 +5,20 @@ if (!process.env.NOTION_TOKEN) {
   throw new Error('NOTION_TOKEN env variable is not set')
 }
 
+if (!process.env.NOTION_DATABASE_ID) {
+  throw new Error('NOTION_DATABASE_ID env variable is not set')
+}
+
+const NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID || ''
+
 // Initializing a client
 const client = new Client({
   auth: process.env.NOTION_TOKEN,
 })
 
-export const query = (options: {}) => {
-  if (!process.env.NOTION_DATABASE_ID) {
-    throw new Error('NOTION_DATABASE_ID env variable is not set')
-  }
-
+export const queryPosts = (options: {}) => {
   return client.databases.query({
-    database_id: process.env.NOTION_DATABASE_ID,
+    database_id: NOTION_DATABASE_ID,
     ...options,
   })
 }

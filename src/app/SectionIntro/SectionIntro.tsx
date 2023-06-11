@@ -30,11 +30,11 @@ const SectionHeader = () => {
           companies from Canada, Finland, Australia, US, Czech Republic. I write
           about scalable and modular front-end, tech tooling, startups and
           system design. I’m also co-organizing regional JavaScript conferences{' '}
-          <a className="font-medium" href="https://jsconf.am">
+          <a className="BaseTextLink" href="https://jsconf.am">
             jsconf.am
           </a>
           ,{' '}
-          <a className="font-medium" href="https://reactconf.am">
+          <a className="BaseTextLink" href="https://reactconf.am">
             reactconf.am
           </a>
         </p>
