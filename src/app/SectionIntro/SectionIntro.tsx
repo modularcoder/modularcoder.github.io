@@ -17,19 +17,20 @@ const SectionHeader = () => {
             alt="Gevorg Harutyunyan profile picture"
           />
           <div>
-            <h1 className="text-4xl sm:text-5xl text-zinc-800 font-bold tracking-tight ">
+            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-blue-500 break-words ">
               Gevorg Harutyunyan
             </h1>
-            <h2 className="text-2xl text-zinc-500 font-bold tracking-tight ">
+            <h2 className="text-2xl text-zinc-400 font-semibold tracking-tight ">
               Front End Engineer, Full Stack Developer
             </h2>
           </div>
         </div>
         <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-          Hi, I’m Gevorg, a software engineer based in Armenia. Working with
-          companies from Canada, Finland, Australia, US, Czech Republic. I write
-          about scalable and modular front-end, tech tooling, startups and
-          system design. I’m also co-organizing regional JavaScript conferences{' '}
+          Hi, I’m Gevorg, a software engineer based in Armenia. I write about
+          scalable and modular front-end, tech tooling, startups and system
+          design. I’m also co-organizing regional JavaScript conferences{' '}
+          {/* Working with
+          companies from Canada, Finland, Australia, US, Czech Republic. */}
           <a className="BaseTextLink" href="https://jsconf.am">
             jsconf.am
           </a>

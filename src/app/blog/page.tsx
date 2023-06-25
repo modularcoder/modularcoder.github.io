@@ -6,7 +6,7 @@ import Link from 'next/link'
 import {
   queryPosts,
   type PageObjectResponse,
-} from '@/app/_services/notionService'
+} from '@/app/blog/_services/notionService'
 // import { PageObjectResponse } from '@notionhq/client'
 
 // type PostsQueryResultItem = {

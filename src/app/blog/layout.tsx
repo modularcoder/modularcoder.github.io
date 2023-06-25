@@ -6,9 +6,8 @@ export default function BlogLayout({
   children: React.ReactNode
 }) {
   return (
-    <main>
-      <TheHeader />
-      <div className="min-h-screen p-24">{children}</div>
+    <main className=" py-20 px-10 ">
+      <div className="min-h-screen">{children}</div>
     </main>
   )
 }

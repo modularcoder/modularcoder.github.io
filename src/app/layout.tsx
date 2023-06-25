@@ -1,4 +1,4 @@
-import './globals.css'
+import './main.css'
 // import { Roboto } from 'next/font/google'
 
 // const roboto = Roboto({
@@ -48,6 +48,7 @@ export default function RootLayout({
       <meta name="msapplication-TileColor" content="#ffc40d" />
       <meta name="theme-color" content="#ffffff"></meta>
       <body className={`flex flex-col min-h-screen bg-zinc-50 dark:bg-black`}>
+        <TheHeader />
         <main className="container mx-auto bg-white shadow-sm min-h-screen">
           {children}
         </main>

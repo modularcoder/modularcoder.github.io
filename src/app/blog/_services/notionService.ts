@@ -23,4 +23,17 @@ export const queryPosts = (options: {}) => {
   })
 }
 
+export const queryPost = async (pageId: string) => {
+  const response = await client.pages.retrieve({ page_id: pageId })
+  return response
+}
+
+export const queryPostBlocks = async (pageId: string) => {
+  const response = await client.blocks.children.list({
+    block_id: pageId,
+    page_size: 100,
+  })
+  return response
+}
+
 export default client

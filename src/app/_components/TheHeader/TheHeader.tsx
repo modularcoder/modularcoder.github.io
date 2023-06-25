@@ -10,12 +10,13 @@ const TheHeader: React.FC = () => {
         bg-white bg-opacity-80
         backdrop-blur-lg backdrop-opacity-40
         shadow-sm
+        z-10
       "
     >
       <Link href={'/'}>
         <div className="flex flex-row gap-2 align-middle">
           <Image
-            src="profilePic.png"
+            src="/profilePic.png"
             width={40}
             height={40}
             className="w-10 h-10 aspect-auto rounded-full shadow-sm"
