@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import {
   TwitterIcon,
   InstagramIcon,
@@ -11,10 +12,12 @@ const SectionHeader = () => {
     <section className="py-16 px-8 sm:py-40 sm:px-20">
       <div className="max-w-xl ">
         <div className="flex flex-row gap-6 items-center">
-          <img
+          <Image
             src="profilePic.png"
             className="w-20 h-20 rounded-full shadow-sm"
             alt="Gevorg Harutyunyan profile picture"
+            width={80}
+            height={80}
           />
           <div>
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-blue-500 break-words ">
@@ -25,7 +28,7 @@ const SectionHeader = () => {
             </h2>
           </div>
         </div>
-        <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+        <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400">
           Hi, I’m Gevorg, a software engineer based in Armenia. I write about
           scalable and modular front-end, tech tooling, startups and system
           design. I’m also co-organizing regional JavaScript conferences{' '}

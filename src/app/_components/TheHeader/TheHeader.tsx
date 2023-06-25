@@ -6,11 +6,14 @@ const TheHeader: React.FC = () => {
     <header
       className="
         p-2 px-4
-        fixed top-0 left-0 right-0
-        bg-white bg-opacity-80
+        top-0 left-0 right-0
+        fixed
+        bg-white bg-opacity-70
         backdrop-blur-lg backdrop-opacity-40
         shadow-sm
         z-10
+
+        flex flex-row justify-between items-center
       "
     >
       <Link href={'/'}>
@@ -23,13 +26,18 @@ const TheHeader: React.FC = () => {
             alt="Gevorg Harutyunyan profile picture"
           />
           <div>
-            <h2 className="text-lg leading-5">Gevorg Harutyunyan</h2>
-            <h3 className="text-xs text-slate-400">
+            {/* <h2 className="text-lg leading-5">gh.am</h2> */}
+            {/* <h3 className="text-xs text-slate-400">
               Front End Engineer, Full-Stack Developer
-            </h3>
+            </h3> */}
           </div>
         </div>
       </Link>
+
+      <nav>
+        <Link href={'/contact'}>Contact</Link>
+        <Link href={'/blog'}>Blog</Link>
+      </nav>
     </header>
   )
 }
