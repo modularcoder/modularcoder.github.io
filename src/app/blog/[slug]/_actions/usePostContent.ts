@@ -36,8 +36,12 @@ export async function usePostContent(slug: string) {
 
   // @ts-ignore
   const title = metadataRes.properties.Title.title[0].plain_text as string
-  // @ts-ignore
-  const cover = metadataRes.cover.external.url as string
+
+  const cover =
+    // @ts-ignore
+    (metadataRes.cover?.external?.url as string | undefined) ||
+    // @ts-ignore
+    (metadataRes.cover?.file?.url as string | undefined)
 
   // const fullPath = path.join(postsDirectory, `${id}.md`);
   // const fileContents = fs.readFileSync(fullPath, 'utf8');

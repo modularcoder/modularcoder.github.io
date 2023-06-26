@@ -26,14 +26,26 @@ const TheHeader = () => {
           href={'/blog'}
           className="text-lg  font-bold inline-block px-4 py-1.5 rounded-lg transition hover:bg-pink-50 hover:text-pink-500 "
         >
+          about me
+        </Link>
+        <Link
+          href={'/blog'}
+          className="text-lg  font-bold inline-block px-4 py-1.5 rounded-lg transition hover:bg-pink-50 hover:text-pink-500 "
+        >
           blog
+        </Link>
+        {/* <Link
+          href={'/blog'}
+          className="text-lg  font-bold inline-block px-4 py-1.5 rounded-lg transition hover:bg-pink-50 hover:text-pink-500 "
+        >
+          portfolio
         </Link>
         <Link
           href={'/projects'}
           className="text-lg  font-bold inline-block px-4 py-1.5 rounded-lg transition hover:bg-pink-50 hover:text-pink-500 "
         >
           demo projects
-        </Link>
+        </Link> */}
         <Link
           href={'/contact'}
           className="text-lg font-bold  inline-block px-4 py-1.5 rounded-lg transition hover:bg-pink-50 hover:text-pink-500"

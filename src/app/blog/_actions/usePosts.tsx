@@ -25,8 +25,11 @@ const usePosts = async () => {
     const item = itemRaw as PageObjectResponse
     // @ts-ignore
     const title = item.properties.Title.title[0].plain_text as string
-    // @ts-ignore
-    const cover = item.cover?.external?.url as string | undefined
+    const cover =
+      // @ts-ignore
+      (item.cover?.external?.url as string | undefined) ||
+      // @ts-ignore
+      (item.cover?.file?.url as string | undefined)
 
     // @ts-ignore
     const summary = item.properties.Summary.rich_text[0].plain_text as string
