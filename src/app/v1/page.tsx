@@ -4,7 +4,7 @@ import { SectionIntro } from './SectionIntro/SectionIntro'
 import { SectionArticles } from './SectionArticles/SectionArticles'
 import { SectionSubscribe } from './SectionSubscribe/SectionSubscribe'
 import { SectionWork } from './SectionWork/SectionWork'
-import { usePosts } from './blog/_actions/usePosts'
+import { usePosts } from '../blog/_actions/usePosts'
 
 export default async function Home() {
   const { posts } = await usePosts()
