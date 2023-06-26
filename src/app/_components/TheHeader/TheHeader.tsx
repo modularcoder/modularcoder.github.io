@@ -1,7 +1,8 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
-const TheHeader: React.FC = () => {
+import { TheHeaderLogo } from './TheHeaderLogo'
+
+const TheHeader = () => {
   return (
     <header
       className="
@@ -17,46 +18,28 @@ const TheHeader: React.FC = () => {
       "
     >
       <Link href={'/'} className="group">
-        <div className="flex flex-row gap-4 align-middle justify-center items-center">
-          <span className=" text-4xl text-zinc-200 group-hover:-translate-x-1 transition  group-hover:text-pink-400">
-            &#123;
-          </span>
-          <Image
-            src="/profilePic.png"
-            width={40}
-            height={40}
-            className="w-10 h-10 aspect-auto rounded-full shadow-sm"
-            alt="Gevorg Harutyunyan profile picture"
-          />
-          <div className="flex flex-row gap-2 items-center">
-            <h2
-              className="
-                mr-1.5
-                text-2xl font-bold
-                tracking-tight
-
-              "
-            >
-              <span
-                className="
-                text-pink-400
-                  delay-150 ease-in-out
-                "
-              >
-                gh
-              </span>
-              <span className="text-zinc-300">.am</span>
-            </h2>
-            <span className="text-4xl text-zinc-200 group-hover:translate-x-1 transition  group-hover:text-pink-400">
-              &#125;
-            </span>
-          </div>
-        </div>
+        <TheHeaderLogo />
       </Link>
 
-      <nav>
-        <Link href={'/contact'}>Contact</Link>
-        <Link href={'/blog'}>Blog</Link>
+      <nav className="text-2xl space-x-1 flex flex-row group text-zinc-600">
+        <Link
+          href={'/blog'}
+          className="text-lg  font-bold inline-block px-4 py-1.5 rounded-lg transition hover:bg-pink-50 hover:text-pink-500 "
+        >
+          blog
+        </Link>
+        <Link
+          href={'/projects'}
+          className="text-lg  font-bold inline-block px-4 py-1.5 rounded-lg transition hover:bg-pink-50 hover:text-pink-500 "
+        >
+          demo projects
+        </Link>
+        <Link
+          href={'/contact'}
+          className="text-lg font-bold  inline-block px-4 py-1.5 rounded-lg transition hover:bg-pink-50 hover:text-pink-500"
+        >
+          let&apos;s work together
+        </Link>
       </nav>
     </header>
   )
